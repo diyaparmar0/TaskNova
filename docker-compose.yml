@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tasknova
+    ports:
+      - "5432:5432"
+    volumes:
+      - tasknova_pg:/var/lib/postgresql/data
+volumes:
+  tasknova_pg:
